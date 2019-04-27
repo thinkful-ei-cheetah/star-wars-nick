@@ -11,9 +11,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const BASE_URL = 'https://swapi.co/api';
+    this.fetchFromApi();
+  }
 
-    fetch(BASE_URL + '/people')
+  fetchFromApi() {
+    const BASE_URL = 'https://swapi.co/api';
+    const searchParam = `?search=${this.state.searchTerm}`;
+
+    fetch(BASE_URL + '/people' + searchParam)
       .then(res => res.json())
       .then(data => {
         const results = data.results.map(result => {
@@ -24,20 +29,19 @@ class App extends Component {
           results
         });
       })
-      .catch( err => console.log(err));
+      .catch(err => console.log(err));
   }
 
-  handleSearchApi() {
-
-  }
-
-  handleSearch() {
-    
+  updateSearchTerm = (searchTerm) => {
+    this.setState({
+      searchTerm
+    }, this.fetchFromApi)
   }
 
   render() {
     const context = {
-      results: this.state.results
+      results: this.state.results,
+      updateSearchTerm: this.updateSearchTerm
     };
 
     return (
