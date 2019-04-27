@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "nickjlee-sw-search-the-force",
+  "name": "sw-search-the-force",
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
