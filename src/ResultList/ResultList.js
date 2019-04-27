@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ResultItem from '../ResultItem/ResultItem';
 import AppContext from '../AppContext';
+import './ResultList.css'
 
 class ResultList extends Component {
   static contextType = AppContext;
@@ -15,7 +16,7 @@ class ResultList extends Component {
     });
 
     return (
-      <main>
+      <main className="results-list">
         <ul>
           {resultItems}
         </ul>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import ResultList from './ResultList/ResultList';
 import AppContext from './AppContext';
-// import dummyResponse from './dummy-response';
+import './App.css';
 
 class App extends Component {
   state = {

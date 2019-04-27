@@ -1,0 +1,10 @@
+.results-list {
+  background-color: darkblue;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
+}
+
+li {
+  list-style: none;
+}
